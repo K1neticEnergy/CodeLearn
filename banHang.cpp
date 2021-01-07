@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 int main(){
-    short select, times = 0, j = 1;
+    short select;
     int total = 0;
     short countPepsi = 0, countCoke = 0, countSprite = 0, countBurger = 0, countNugget = 0, countBanhmi = 0, countSteak = 0, countPho = 0, countComsuon = 0;
-    unsigned long long yourChoices = 0;
-    printf("May ban hang tu dong xin han hanh phuc vu quy khach\n", "==========================================================\n");
+    printf("May ban hang tu dong xin han hanh phuc vu quy khach\n==========================================================\n");
     MAIN_MENU:
         printf("Moi quy khach chon:\n");
         printf("\t1: Nuoc ngot\n");
@@ -39,7 +38,6 @@ int main(){
     COKE://10k
         countCoke++;
         total += 10;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -48,7 +46,6 @@ int main(){
     SPRITE://10k
         countSprite++;
         total += 10;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -56,7 +53,6 @@ int main(){
     PEPSI://10k
         countPepsi++;
         total += 10;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -80,7 +76,6 @@ int main(){
     BURGER://40K
         countBurger++;
         total += 40;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -88,7 +83,6 @@ int main(){
     NUGGET://30K
         countNugget++;
         total += 30;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -96,7 +90,6 @@ int main(){
     BANHMI://20K
         countBanhmi++;
         total += 20;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -120,7 +113,6 @@ int main(){
     STEAK://50K
         countSteak++;
         total += 50;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -128,7 +120,6 @@ int main(){
     PHO://40K
         countPho++;
         total += 40;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0) goto CHECKOUT;
@@ -136,7 +127,6 @@ int main(){
     COM_SUON://30K
         countComsuon++;
         total += 30;
-        times++;
         printf("Da xong? (0/1)");
         scanf("%d", &select);
         if (select == 0)    goto CHECKOUT;
@@ -145,33 +135,42 @@ int main(){
     CHECKOUT:
 
         if(countCoke == 0) goto PRINT_SPRITE;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("COKE      %d    %3ld\n", countCoke, countCoke * 10000);
+
     PRINT_SPRITE:
         if(countSprite == 0) goto PRINT_PEPSI;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("SPRITE    %d    %3ld\n", countSprite, countSprite * 10000);
+
     PRINT_PEPSI:
         if(countPepsi == 0) goto PRINT_BURGER;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("PEPSI     %d    %3ld\n", countPepsi, countPepsi * 10000);
+
     PRINT_BURGER:
         if(countBurger == 0) goto PRINT_NUGGET;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("BURGER    %d    %3ld\n", countBurger, countBurger * 40000);
+
     PRINT_NUGGET:
         if(countNugget == 0) goto PRINT_BANHMI;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("NUGGET    %d    %3ld\n", countNugget, countNugget * 30000);
+
     PRINT_BANHMI:
         if(countBanhmi == 0) goto PRINT_STEAK;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("BANH MI   %d    %3ld\n", countBanhmi, countBanhmi * 20000);
+
     PRINT_STEAK:
         if(countSteak == 0) goto PRINT_PHO;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("STEAK     %d    %3ld\n", countSteak, countSteak * 50000);
+
     PRINT_PHO:
         if(countPho == 0) goto PRINT_COMSUON;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("PHO       %d    %3ld\n", countPho, countPho * 40000);
+
     PRINT_COMSUON:
         if(countComsuon == 0) goto PRINT_TOTAL;
-        printf("COKE    %3d %3ld", countCoke, countCoke * 10000);
+        printf("COM SUON  %d    %3ld\n", countComsuon, countComsuon * 30000);
+
     PRINT_TOTAL:
-        printf("\n%d", total);
+        printf("\n%d", total * 1000);
 
     return 0;
 }
