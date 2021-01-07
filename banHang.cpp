@@ -67,9 +67,9 @@ int main(){
         printf("Khach da chon:");
     RETYPE_FAST_FOOD:
         scanf("%d", &select);
-        if(select == 1) goto COKE;
-        if(select == 2) goto SPRITE;
-        if(select == 3) goto PEPSI;
+        if(select == 1) goto BURGER;
+        if(select == 2) goto NUGGET;
+        if(select == 3) goto BANHMI;
         if(select == 0) goto MAIN_MENU;
                         goto RETYPE_FAST_FOOD;
 
