@@ -170,7 +170,7 @@ int main(){
         printf("COM SUON  %d    %3ld\n", countComsuon, countComsuon * 30000);
 
     PRINT_TOTAL:
-        printf("\n%d", total * 1000);
+        printf("\nTong tien: %d", total * 1000);
 
     return 0;
 }
