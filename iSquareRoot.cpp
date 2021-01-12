@@ -19,6 +19,6 @@ float Q_rsqrt(float number) {
 int main(int argc, char **argv){
     float number;
     cin >> number;
-    cout << Q_rsqrt(number);
+    cout << double(Q_rsqrt(1.0f/number));
     return 0;
 }
